@@ -5,9 +5,8 @@ import os
 def apply_pop_art_filter(image_path, output_path="pop_art_image.png"):
     try:
         img = Image.open(image_path)
-        img_resized = img.resize((128, 128))
 
-        enhancer = ImageEnhance.Contrast(img_resized)
+        enhancer = ImageEnhance.Contrast(img)
         img_contrast = enhancer.enhance(2.0)
         enhancer = ImageEnhance.Color(img_contrast)
         img_color = enhancer.enhance(1.5)
